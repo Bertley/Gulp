@@ -1,0 +1,76 @@
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+// Variables 
+  
+$bgColor: #000; 
+$color: #fff; 
+$hambgcolor: #fff;
+$hambasewidth: 25px;
+$hamsizemultiplier: 1;
+$headerheight: 5vh; 
+$hambgheight: 22.5px; 
+$logosize: 25%; 
+$sidemargins: 55px; 
+$navtop: 0.2 * $sidemargins;  
+$textsize: 1rem; 
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  //CSS
+  .container{
+    padding-right: $sidemargins !important; 
+    padding-left: $sidemargins !important; 
+  }
+
+  // Body
+  body {
+    header {           
+      nav { 
+        padding: $navtop 0 !important; 
+        .menu {
+          .menu-content {
+            ul {
+              margin: 0 !important; 
+              padding-left: 2.5 * $hambasewidth !important; 
+              a{
+                text-decoration: none; 
+                li {
+                  font-size: $textsize; 
+                  line-height: 2.5 * $textsize; 
+                }
+              }
+            }
+          }
+        }
+        .logo {
+          img {
+            width: $logosize !important;  
+          }
+        }
+        .cart {
+          i{
+              font-size: $hambgheight !important; 
+          }
+          form {
+            position: relative !important;
+            height: $hambgheight; 
+            display: flex; 
+            line-height: $headerheight; 
+            border-bottom: 1px solid $color; 
+            font-size: $textsize;
+            width: 100% !important; 
+            i {
+              font-size: $textsize !important;
+              line-height: $textsize !important; 
+              padding: 0.2 * $textsize 0 0 0.25 * $textsize !important; 
+            }
+            input[type=text] {
+              font-size: $textsize !important; 
+            }
+          }
+        }
+      }
+    }
+  }
+}

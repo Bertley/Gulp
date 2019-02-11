@@ -33,9 +33,11 @@ gulp.task('scripts', async function() {
 gulp.task('sass', async function() {
     gulp.src('src/sass/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(concat('styles.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css')); 
 }); 
+
 
 // Minify Image 
 gulp.task('images', async function() {

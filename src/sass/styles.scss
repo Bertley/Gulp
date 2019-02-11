@@ -1,23 +1,180 @@
-$bgColor: #fff; 
+$bgColor: #000; 
+$color: #fff; 
+$hambgcolor: #fff;
+$hambasewidth: 25px;
+$hamsizemultiplier: 1;
+$headerheight: 5vh; 
+$hambgheight: 22.5px; 
+$logosize: 70%; 
+$sidemargins: 20px; 
+$navtop: 0.2 * $sidemargins;  
+$textsize: 0.75rem; 
+
+.container{
+    padding-right: $sidemargins; 
+    padding-left: $sidemargins; 
+}
+.closed {
+    display: none !important; 
+}
+.opened-search {
+    display: flex !important;
+}
+.no-border {
+    border: 0 !important; 
+}
 
 body {
     background: $bgColor; 
-}
-.welcome {
-    color: red; 
-}
-
-body {
     margin: 0;
+    header {
+        width: 100%;       
+        nav {
+            padding: $navtop 0; 
+            color: #fff; 
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between; 
+            height: $headerheight;
+            & > div{
+                display: flex; 
+                line-height: $headerheight; 
+                margin: 0; 
+            }
+            .menu {
+                width: 30%;
+                cursor: pointer; 
+                overflow: visible;
+                flex-flow: row wrap; 
+                position: relative;
+                // Hamburger 
+                .hamburger {
+                    z-index: 20; 
+                    width: $hambasewidth * $hamsizemultiplier;
+                    height: $hambgheight * $hamsizemultiplier;
+                    position: absolute;
+                    top: 50%; 
+                    margin-top: -0.5 * $hambgheight; 
+                    cursor: pointer; 
+                    display: inline-block; 
+                    span {
+                        display: block;
+                        position: absolute;
+                        height: 2.22px; 
+                        border-radius: 1px; 
+                        width: 100%;
+                        background: $hambgcolor none repeat scroll 0% 0%;
+                        opacity: 1;
+                        right: 0px;
+                        transition: all 0.25s ease-in-out 0s;
+                        transform: rotate(0deg);
+                    &:nth-child(1) {
+                        margin-top: 0px;
+                    }
+                    &:nth-child(2) {
+                        margin-top: 8px * $hamsizemultiplier;
+                        margin-right: 0.25 * $hambasewidth; 
+                        width: 75%; 
+                    }
+                    &:nth-child(3) {
+                        margin-top: 16px * $hamsizemultiplier;
+                    }
+                    }
+                    &.opened {
+                    span {
+                        &:nth-child(1) {
+                            transform: rotate(135deg);
+                            margin-top: 8px * $hamsizemultiplier;
+                        }
+                        &:nth-child(2) {
+                            opacity: 0;
+                            right: -$hambasewidth * 3;
+                        }
+                        &:nth-child(3) {
+                            transform: rotate(-135deg);
+                            margin-top: 8px * $hamsizemultiplier;
+                        }
+                    }
+                    }
+                }
+                .menu-open{
+                    display: block !important; 
+                }
+                .menu-content{
+                    position: absolute; 
+                    display: none; 
+                    ul {
+                        list-style: none;
+                        padding: 0; 
+                        margin: 2 * $hambgheight 0; 
 
-    .header {
-        height: 150px;
-        width: 100%; 
-        background-color: blue; 
-        color: #fff; 
-    }
+                        a{
+                            text-decoration: none; 
+                            color: $color; 
+                            li {
+                              font-size: $textsize; 
+                              line-height: 2.5 * $textsize; 
+                            }
+                        }
+                    }
+                }
+            }
+            .logo {
+                // display: flex; 
+                width: 40%; 
+                justify-content: center; 
+                align-items: center;
 
-    h1 {
-        margin: 0; 
+                img {
+                    width: $logosize;  
+                    display: inline-block; 
+                }
+            }
+            .cart {
+                justify-content: flex-end; 
+                width: 30%; 
+                align-items: center; 
+                i{
+                    font-size: 1.5 * $textsize; 
+                    padding-left: $textsize; 
+                }
+                form {
+                    display: none; 
+                    position: absolute; 
+                    color: $color; 
+                    width: 70%; 
+                    // display: flex; 
+                    height: $hambgheight;
+                    line-height: $headerheight; 
+                    border-bottom: 1px solid $color; 
+                    font-size: $textsize;
+                    margin-top: -5px; 
+                    i {
+                        font-size: $textsize;
+                        line-height: $textsize; 
+                        padding: 0.6 * $textsize 0 0 0.6 * $textsize; 
+                        height: $hambgheight; 
+                    }
+                    input[type=text] {
+                        background-color: transparent; 
+                        outline: none; 
+                        box-sizing: border-box; 
+                        line-height: normal; 
+                        color: $color; 
+                        border: 0; 
+                        width: 100%; 
+                        font-size: $textsize; 
+                    }
+                    button {
+                        color: $color; 
+                        background-color: transparent; 
+                        border: 0; 
+                        padding: 0; 
+                    }
+                }
+            }
+        }
     }
 }
+
+
