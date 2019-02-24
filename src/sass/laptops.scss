@@ -12,22 +12,22 @@ $hamsizemultiplier: 1;
 $headerheight: 5vh; 
 $hambgheight: 22.5px; 
 $logosize: 25%; 
-$sidemargins: 55px; 
-$navtop: 0.2 * $sidemargins;  
+$containerpadding: 55px; 
+$navtop: 0.2 * $containerpadding;  
 $textsize: 1rem; 
 
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1025px) {
   //CSS
   .container{
-    padding-right: $sidemargins !important; 
-    padding-left: $sidemargins !important; 
+    margin-right: $containerpadding; 
+    margin-left: $containerpadding; 
   }
 
   // Body
   body {
     header {           
       nav { 
-        padding: $navtop 0 !important; 
+        padding-top: $navtop; 
         .menu {
           .menu-content {
             ul {
@@ -55,7 +55,6 @@ $textsize: 1rem;
           form {
             position: relative !important;
             height: $hambgheight; 
-            display: flex; 
             line-height: $headerheight; 
             border-bottom: 1px solid $color; 
             font-size: $textsize;
@@ -71,6 +70,22 @@ $textsize: 1rem;
           }
         }
       }
+    }
+    .video-container {
+      .video{
+          // width: 100vw;
+          // height: 110vh; 
+      }
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+  .video-container {
+    .video{
+        // width: 100vw;
+        width: 100vw !important;
+        height: auto !important; 
     }
   }
 }

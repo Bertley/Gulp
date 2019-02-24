@@ -4,9 +4,48 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
+  $containerpadding: 20px; 
+  $logosize: 70%; 
+  $textsize: .9rem; 
     //CSS
   .closed-m {
     display: none !important; 
+  }
+  body {
+    .header {           
+      nav { 
+        .logo {
+          img {
+            width: $logosize;  
+          }
+        }
+      }
+    }
+    .footer {
+      nav {
+        height: auto !important;
+        flex-wrap: wrap-reverse; 
+        &>ul {
+          line-height: 1.2 * $textsize !important; 
+        }
+        .copyright{
+          max-width: 100% !important;
+          width: 100%;  
+          font-size: 0.5 * $textsize !important; 
+          justify-content: center !important; 
+          li{
+            margin: 0 12px 0 0 !important; 
+          } 
+        }
+        .footer-links{
+          font-size: .75 * $textsize; 
+          max-width: 55% !important; 
+          padding: 0 !important; 
+        }
+        .social {
+          max-width: 45% !important; 
+        }
+      }
+    }
   }
 }

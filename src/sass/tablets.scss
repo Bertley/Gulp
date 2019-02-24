@@ -4,7 +4,87 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
-    //CSS
-    
+  $containerpadding: 55px; 
+  $bgColor: #000; 
+  $color: #fff; 
+  $hambgcolor: #fff;
+  $hambasewidth: 25px;
+  $hamsizemultiplier: 1;
+  $headerheight: 5vh; 
+  $hambgheight: 22.5px; 
+  $logosize: 25%;
+  $navtop: 0.2 * $containerpadding;  
+  $textsize: 1rem; 
+
+   //CSS
+  .container{
+    margin-right: $containerpadding; 
+    margin-left: $containerpadding; 
+  }
+
+  // Body
+  body {
+    .header {           
+      nav { 
+        padding-top: $navtop; 
+        .menu {
+          .menu-content {
+            ul {
+              margin: 0 !important; 
+              padding-left: 2.5 * $hambasewidth !important; 
+              a{
+                text-decoration: none; 
+                li {
+                  font-size: $textsize; 
+                  line-height: 2.5 * $textsize; 
+                }
+              }
+            }
+          }
+        }
+        .logo {
+          img {
+            width: $logosize !important;  
+          }
+        }
+        .cart {
+          i{
+              font-size: $hambgheight !important; 
+          }
+          form {
+            position: relative !important;
+            height: $hambgheight; 
+            line-height: $headerheight; 
+            border-bottom: 1px solid $color; 
+            font-size: $textsize;
+            width: 100% !important; 
+            i {
+              font-size: $textsize !important;
+              line-height: $textsize !important; 
+              padding: 0.2 * $textsize 0 0 0.25 * $textsize !important; 
+            }
+            input[type=text] {
+              font-size: $textsize !important; 
+            }
+          }
+        }
+      }
+    }
+    .video-container {
+      .video{
+          height: 100vh;
+      }
+    }
+    .footer {
+      nav {
+        .copyright{
+          max-width: 100%; 
+          font-size: 0.5 * $textsize; 
+        }
+        .footer-links{
+          font-size: .75 * $textsize; 
+        }
+      }
+    }
+  }
 }

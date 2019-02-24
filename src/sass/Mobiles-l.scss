@@ -4,9 +4,120 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-  
-  //CSS
+  $containerpadding: 20px; 
+  $bgColor: #000; 
+  $color: #fff; 
+  $hambgcolor: #fff;
+  $hambasewidth: 25px;
+  $hamsizemultiplier: 1;
+  $headerheight: 5vh; 
+  $hambgheight: 22.5px; 
+  $logosize: 25%;
+  $navtop: 0.2 * $containerpadding;  
+  $textsize: 1rem; 
+
   .closed-m {
     display: none !important; 
+  } 
+   //CSS
+  .container{
+    padding-right: $containerpadding; 
+    padding-left: $containerpadding; 
+  }
+
+  // Body
+  body {
+    .header {           
+      nav { 
+        padding-top: $navtop; 
+        .menu {
+          .menu-content {
+            ul {
+              margin: 0 !important; 
+              padding-left: 2.5 * $hambasewidth !important; 
+              a{
+                text-decoration: none; 
+                li {
+                  font-size: $textsize; 
+                  line-height: 2.5 * $textsize; 
+                }
+              }
+            }
+          }
+        }
+        .logo {
+          img {
+            width: $logosize !important;  
+          }
+        }
+        .cart {
+          i{
+              font-size: $hambgheight !important; 
+          }
+          form {
+            position: relative !important;
+            height: $hambgheight; 
+            line-height: $headerheight; 
+            border-bottom: 1px solid $color; 
+            font-size: $textsize;
+            width: 100% !important; 
+            i {
+              font-size: $textsize !important;
+              line-height: $textsize !important; 
+              padding: 0.2 * $textsize 0 0 0.25 * $textsize !important; 
+            }
+            input[type=text] {
+              font-size: $textsize !important; 
+            }
+          }
+        }
+      }
+    }
   }
 }
+
+@media (max-width: 767px)  {
+  $containerpadding: 20px; 
+  $bgColor: #000; 
+  $color: #fff; 
+  $hambgcolor: #fff;
+  $hambasewidth: 25px;
+  $hamsizemultiplier: 1;
+  $headerheight: 5vh; 
+  $hambgheight: 22.5px; 
+  $logosize: 25%;
+  $navtop: 0.2 * $containerpadding;  
+  $textsize: 1rem; 
+
+  .container{
+    margin-right: $containerpadding; 
+    margin-left: $containerpadding; 
+  }
+
+  .video-container {
+    .video{
+        // height: 100vh;
+        height: 100%; 
+    }
+  }
+
+  .footer {
+    nav {
+      height: auto !important;
+      flex-wrap: wrap-reverse; 
+      &>ul {
+        line-height: 1.2 * $textsize !important; 
+      }
+      .copyright{
+        max-width: 100% !important;
+        width: 100%;  
+        font-size: 0.5 * $textsize !important; 
+        justify-content: center !important;  
+      }
+      .footer-links{
+        font-size: .75 * $textsize; 
+      }
+    }
+  }
+}
+
